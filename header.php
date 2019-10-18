@@ -8,8 +8,14 @@
         <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="bootstrap/assets/css.docs.min.css">
         <link type="text/css" rel="stylesheet" href="style.css">
+        <title>Patients</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Skin | Operations</title>
+        
     </head>
     <body>
         <script src="bootstrap/dist/js/bootsrap.js"></script>
@@ -18,6 +24,7 @@
         <script src="bootstrap/dist/js/bootsrap.js.map"></script>
         <script src="bootstrap/js/test/vendor/jquery-1.9.1.min.js"></script>
         <script src="jquery.min.js"></script>
+        
         <script src="myne.js"></script>
     </body>
     </html>

@@ -19,7 +19,7 @@
                 $conf_patient = $row['conf_patient'];
                 $patient_discussed = $row['patient_discussed'];
                 $op_confirmed = $row['op_confirmed'];
-                $all_equip_available = $row['all_equip_available'];
+                $all_equip_available = $row['all_equip_available']; 
                 $antibiotics_needed = $row['antibiotics_needed'];
                 $est_blood_loss = $row['est_blood_loss'];
                 $blood_transfusion_predicted = $row['blood_transfusion_predicted'];

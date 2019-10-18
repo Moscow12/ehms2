@@ -1,12 +1,54 @@
 <?php
     include('header.php');
+    require_once ("connection.php");
+    
+            $id=$_GET['id'];
+            $patient_name = $_GET['patient_name'];
+            $date_check_up=$_GET['date_check_up'];
+            $hb=$_GET['hb'];
+            $hba1c=$_GET['hba1c'];
+            $microalb=$_GET['microalb'];
+            $bun=$_GET['bun'];
+            $crea=$_GET['crea'];
+            $esr=$_GET['esr'];
+            $vb_test_date=$_GET['vb_test_date'];
+            $fundoscopy_test=$_GET['fundoscopy_test'];
+            $fundoscopy_test=$_GET['fundoscopy_test'];
+            $diagnosis=$_GET['diagnosis'];
+            $follow_up_date=$_GET['follow_up_date'];
+            $bwt=$_GET['bwt'];
+            $bp=$_GET['bp'];
+            $rbg=$_GET['rbg'];
+            $clinical_notes=$_GET['clinical_notes'];
+            $diabete_date=$_GET['diabete_date'];
+            $general=$_GET['general'];
+            $diet=$_GET['diet'];
+            $injection_technique=$_GET['injection_technique'];
+            $urine_testing=$_GET['urine_testing'];
+            $hyper_hypoglycemic=$_GET['hyper_hypoglycemic'];
+            $foot_care=$_GET['foot_care'];
+            $late_complication=$_GET['late_complication'];
+            $drugs=$_GET['drugs'];
+
+            $names_diabetic = "SELECT * FROM patients_diabetic WHERE id =$id ";
+            $name_result = mysqli_query($query, $names_diabetic);
+
+            $regural_checkup  = "SELECT * from regural_check where id =$id";
+            $chackup_result = mysqli_query($query, $regural_checkup);
+
+            /*if(mysqli_num_rows()>0){
+                while($data = mysqli_fetch_assoc($regural_checkup)){
+
+                }
+            }*/
+   
 ?>
 <body><br>
     
 <div class="col-md-2">
                 <a href="index.php" class="btn  btn-info"><< Back</a>
             </div>
-        <form action="regular_check_db.php" method="post">
+        <form action="regular_check_db.php" method="post"><input type="text" value="<?php echo $id; ?>" name="patient_id" hidden><input type="text" value="<?php echo $patient_name; ?>" name="patient_name" hidden>
             <div class="row col-md-12">
                 <table class="table table-bordered" id="tabled">           
                     <thead>
@@ -24,6 +66,18 @@
                         </tr>                
                     </thead>
                     <tbody>
+                        <?php foreach($chackup_result as $checkup){?>
+                        <tr>
+                            <td><input type="date" class="form-control" name="date_check_up" value="<?php echo $checkup['date_check_up']; ?>" disabled></td>
+                            <td><input type="text" class="form-control" name="hb" value="<?php echo $checkup['hb']; ?>" disabled></td> 
+                            <td><input type="text" class="form-control" name="hba1c" value="<?php echo $checkup['hba1c']; ?>" disabled></td>
+                            <td><input type="text" class="form-control" name="microalb" value="<?php echo $checkup['microalb']; ?>" disabled></td>
+                            <td><input type="text" class="form-control" name="bun" value="<?php echo $checkup['bun']; ?>" disabled></td>
+                            <td><input type="text" class="form-control" name="crea" value="<?php echo $checkup['crea']; ?>" disabled></td>
+                            <td><input type="text" class="form-control" name="esr" value="<?php echo $checkup['esr']; ?>" disabled></td>
+                            <td><button type="submit" class="btn btn-success" >Edit</button></td>   
+                        </tr>
+                        <?php } ?>
                         <tr>
                             <td><input type="date" class="form-control" name="date_check_up"></td>
                             <td><input type="text" class="form-control" name="hb"></td> 
@@ -42,7 +96,7 @@
         <hr>   
     
        
-            <form action="regular_check_db.php" method="post">
+            <form action="regular_check_db.php" method="post"><input type="text" value="<?php echo $id; ?>" name="patient_id" hidden>
                 <div class="row col-md-12">
                     <table class="table table-bordered" id="tabled">
                         <thead>
@@ -63,7 +117,7 @@
             </form>
         
     <br><hr><br>
-    <form action="regular_check_db.php" method="post">
+    <form action="regular_check_db.php" method="post"><input type="text" value="<?php echo $id; ?>" name="patient_id" hidden>
         <div class="row col-md-12">
             <table class="table table-bordered" id="tabled">
                 <thead>
@@ -83,7 +137,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="date" class="form-control" name="date_diabetes"></td>
+                        <td><input type="date" class="form-control" name="diabete_date"></td>
                         <td><textarea type="text" class="form-control" name="general"></textarea></td>
                         <td><input type="text" class="form-control" name="diet"></td>
                         <td><input type="text" class="form-control" name="injection_technique"></td>
@@ -100,7 +154,7 @@
         </div>
     </form>
     <hr>
-    <form action="regular_check_db.php" method="post">
+    <form action="regular_check_db.php" method="post"><input type="text" value="<?php echo $id; ?>" name="patient_id" hidden>
         <div class="row col-md-12">
             <table class="table table-bordered" id="tabled">
                 <thead> 
@@ -121,7 +175,7 @@
         </div>
     </form>
     <hr>
-    <form action="regular_check_db.php" method="post">
+    <form action="regular_check_db.php" method="post"><input type="text" value="<?php echo $id; ?>" name="patient_id" hidden>   
         <div class="row col-md-12">
             <table class="table table-bordered" id="tabled">
                 <thead >
